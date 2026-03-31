@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sente Yo Credits - Dashboard Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="airtel-home-page">
+  <nav class="navbar app-navbar">
+    <a href="index.html" class="logo"><img src="image/sent_logo_nav.png" alt="Sente Yo Credits logo" class="logo-mark"> SENTE YO CREDITS</a>
+    <div class="nav-links">
+      <a href="dashboard.html">Home</a>
+      <a href="transfer.html">Send Money</a>
+      <a href="profile.html">Profile</a>
+      <a href="#" id="logoutLink">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container app-dashboard airtel-shell">
+    <div class="app-hero airtel-hero">
+      <div class="app-hero-top airtel-hero-top">
+        <p class="app-chip">Fueling Your Next Move</p>
+        <a class="airtel-avatar" href="profile.html" id="homeAvatar">U</a>
+      </div>
+      <h1>Hey, <span id="homeUserName">Customer</span></h1>
+      <p id="homeAccountNumber">Account • UG-000000</p>
+    </div>
+
+    <div class="card airtel-wallet-card">
+      <div class="airtel-wallet-head">
+        <p>Available Balance</p>
+        <button id="toggleBalances" class="airtel-toggle-btn">Hide</button>
+      </div>
+      <div class="app-balance airtel-wallet-amount" id="homeBalance">UGX 0.00</div>
+      <div class="airtel-wallet-actions">
+        <a href="deposit.html">Deposit</a>
+        <a href="withdraw.html">Withdraw</a>
+        <a href="transfer.html">Transfer</a>
+      </div>
+    </div>
+
+    <div class="app-stats-grid airtel-pills-grid">
+      <div class="app-stat-card">
+        <p>My Savings</p>
+        <h3 id="homeSavings">UGX 0.00</h3>
+      </div>
+      <div class="app-stat-card">
+        <p>Active Loans</p>
+        <h3 id="homeLoans">0</h3>
+      </div>
+      <div class="app-stat-card">
+        <p>Insurance</p>
+        <h3 id="homeInsurance">None</h3>
+      </div>
+    </div>
+
+    <div class="card app-actions-card airtel-services-card">
+      <div class="section-title-row">
+        <h2>Services</h2>
+        <a href="overview.html">More</a>
+      </div>
+      <div class="quick-actions-grid airtel-actions-grid">
+        <a class="quick-action-item airtel-action" href="deposit.html">
+          <span class="airtel-icon-badge">💰</span>
+          <p>Deposit</p>
+        </a>
+        <a class="quick-action-item airtel-action" href="withdraw.html">
+          <span class="airtel-icon-badge">💸</span>
+          <p>Withdraw</p>
+        </a>
+        <a class="quick-action-item airtel-action" href="transfer.html">
+          <span class="airtel-icon-badge">↪️</span>
+          <p>Transfer</p>
+        </a>
+        <a class="quick-action-item airtel-action" href="savings.html">
+          <span class="airtel-icon-badge">📈</span>
+          <p>Savings</p>
+        </a>
+        <a class="quick-action-item airtel-action" href="loans.html">
+          <span class="airtel-icon-badge">🏦</span>
+          <p>Loans</p>
+        </a>
+        <a class="quick-action-item airtel-action" href="insurance.html">
+          <span class="airtel-icon-badge">🛡️</span>
+          <p>Insurance</p>
+        </a>
+        <a class="quick-action-item airtel-action" href="history.html">
+          <span class="airtel-icon-badge">📜</span>
+          <p>History</p>
+        </a>
+        <a class="quick-action-item airtel-action" href="profile.html">
+          <span class="airtel-icon-badge">⚙️</span>
+          <p>Profile</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="card airtel-recent-card">
+      <div class="section-title-row">
+        <h2>Recent Transactions</h2>
+        <a href="history.html">See All</a>
+      </div>
+      <div id="homeRecentList" class="recent-list">
+        <p>No transactions yet.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-bottom-nav airtel-bottom-nav">
+    <a class="active" href="dashboard.html">Home</a>
+    <a href="transfer.html">Send</a>
+    <a href="history.html">History</a>
+    <a href="profile.html">Profile</a>
+  </div>
+
+  <footer>
+    <p>© 2025 Sente Yo Credits – Fueling Your Next Move</p>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard-home.js"></script>
+</body>
+</html>
