@@ -6,105 +6,171 @@
   <title>Sente Yo Credits - Dashboard Home</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="airtel-home-page">
-  <nav class="navbar app-navbar">
-    <a href="index.html" class="logo"><img src="image/sent_logo_nav.png" alt="Sente Yo Credits logo" class="logo-mark"> SENTE YO CREDITS</a>
-    <div class="nav-links">
-      <a href="dashboard.html">Home</a>
-      <a href="transfer.html">Send Money</a>
-      <a href="profile.html">Profile</a>
-      <a href="#" id="logoutLink">Logout</a>
-    </div>
-  </nav>
+<body class="airtel-home-page dashboard-sidebar-page">
+  <div class="dashboard-shell">
+    <aside class="dashboard-left-nav" aria-label="Dashboard sidebar">
+      <a href="dashboard.html" class="dashboard-brand">
+        <img src="image/sent_logo_nav.png" alt="Sente Yo Credits logo" class="logo-mark">
+        <span>SENTE YO CREDITS</span>
+      </a>
 
-  <div class="container app-dashboard airtel-shell">
-    <div class="app-hero airtel-hero">
-      <div class="app-hero-top airtel-hero-top">
-        <p class="app-chip">Fueling Your Next Move</p>
-        <a class="airtel-avatar" href="profile.html" id="homeAvatar">U</a>
-      </div>
-      <h1>Hey, <span id="homeUserName">Customer</span></h1>
-      <p id="homeAccountNumber">Account • UG-000000</p>
-    </div>
+      <a href="overview.html" class="dashboard-search-link">
+        <span>SR</span>
+        <p>Search</p>
+      </a>
 
-    <div class="card airtel-wallet-card">
-      <div class="airtel-wallet-head">
-        <p>Available Balance</p>
-        <button id="toggleBalances" class="airtel-toggle-btn">Hide</button>
-      </div>
-      <div class="app-balance airtel-wallet-amount" id="homeBalance">UGX 0.00</div>
-      <div class="airtel-wallet-actions">
-        <a href="deposit.html">Deposit</a>
-        <a href="withdraw.html">Withdraw</a>
-        <a href="transfer.html">Transfer</a>
-      </div>
-    </div>
+      <nav class="dashboard-side-links">
+        <a class="active" href="dashboard.html"><span>HM</span>Home</a>
+        <a href="overview.html"><span>OV</span>Overview</a>
+        <a href="transfer.html"><span>SD</span>Send Money</a>
+        <a href="history.html"><span>HS</span>History</a>
+        <a href="services.html"><span>SV</span>Services</a>
+        <a href="profile.html"><span>PF</span>Profile</a>
+      </nav>
 
-    <div class="app-stats-grid airtel-pills-grid">
-      <div class="app-stat-card">
-        <p>My Savings</p>
-        <h3 id="homeSavings">UGX 0.00</h3>
-      </div>
-      <div class="app-stat-card">
-        <p>Active Loans</p>
-        <h3 id="homeLoans">0</h3>
-      </div>
-      <div class="app-stat-card">
-        <p>Insurance</p>
-        <h3 id="homeInsurance">None</h3>
-      </div>
-    </div>
+      <div class="dashboard-side-divider"></div>
 
-    <div class="card app-actions-card airtel-services-card">
-      <div class="section-title-row">
-        <h2>Services</h2>
-        <a href="overview.html">More</a>
+      <div class="dashboard-side-pinned">
+        <p>Pinned</p>
+        <a href="savings.html">Savings Space</a>
+        <a href="loans.html">Loan Center</a>
+        <a href="insurance.html">Insurance Cover</a>
       </div>
-      <div class="quick-actions-grid airtel-actions-grid">
-        <a class="quick-action-item airtel-action" href="deposit.html">
-          <span class="airtel-icon-badge">💰</span>
-          <p>Deposit</p>
-        </a>
-        <a class="quick-action-item airtel-action" href="withdraw.html">
-          <span class="airtel-icon-badge">💸</span>
-          <p>Withdraw</p>
-        </a>
-        <a class="quick-action-item airtel-action" href="transfer.html">
-          <span class="airtel-icon-badge">↪️</span>
-          <p>Transfer</p>
-        </a>
-        <a class="quick-action-item airtel-action" href="savings.html">
-          <span class="airtel-icon-badge">📈</span>
-          <p>Savings</p>
-        </a>
-        <a class="quick-action-item airtel-action" href="loans.html">
-          <span class="airtel-icon-badge">🏦</span>
-          <p>Loans</p>
-        </a>
-        <a class="quick-action-item airtel-action" href="insurance.html">
-          <span class="airtel-icon-badge">🛡️</span>
-          <p>Insurance</p>
-        </a>
-        <a class="quick-action-item airtel-action" href="history.html">
-          <span class="airtel-icon-badge">📜</span>
-          <p>History</p>
-        </a>
-        <a class="quick-action-item airtel-action" href="profile.html">
-          <span class="airtel-icon-badge">⚙️</span>
-          <p>Profile</p>
-        </a>
-      </div>
-    </div>
 
-    <div class="card airtel-recent-card">
-      <div class="section-title-row">
-        <h2>Recent Transactions</h2>
-        <a href="history.html">See All</a>
+      <a href="#" id="logoutLink" class="dashboard-logout-btn">Sign out</a>
+    </aside>
+
+    <main class="dashboard-main-wrap">
+      <header class="dashboard-main-top">
+        <div class="dashboard-top-title">
+          <p>Workspace</p>
+          <h2>Dashboard Home</h2>
+        </div>
+        <div class="dashboard-top-actions">
+          <a class="dashboard-top-pill" href="history.html">Recent Activity</a>
+          <a class="dashboard-top-pill" href="services.html">Explore Services</a>
+          <a class="dashboard-avatar-btn" href="profile.html" id="homeAvatar">U</a>
+        </div>
+      </header>
+
+      <div class="container app-dashboard airtel-shell dashboard-content-container">
+        <section class="dashboard-hero-grid">
+          <div class="app-hero airtel-hero dashboard-main-hero">
+            <div class="app-hero-top airtel-hero-top">
+              <p class="app-chip">Fueling Your Next Move</p>
+              <a class="dashboard-chip-link" href="transfer.html">Quick Send</a>
+            </div>
+            <h1>Hey, <span id="homeUserName">Customer</span></h1>
+            <p id="homeAccountNumber">Account • UG-000000</p>
+            <div class="dashboard-hero-cta-row">
+              <a href="deposit.html">Add Funds</a>
+              <a href="savings.html">Grow Savings</a>
+              <a href="loans.html">Apply Loan</a>
+            </div>
+          </div>
+
+          <div class="card airtel-wallet-card dashboard-wallet-card">
+            <div class="airtel-wallet-head">
+              <p>Available Balance</p>
+              <button id="toggleBalances" class="airtel-toggle-btn">Hide</button>
+            </div>
+            <div class="app-balance airtel-wallet-amount" id="homeBalance">UGX 0.00</div>
+            <div class="dashboard-wallet-subline">Your balance updates instantly after each transaction.</div>
+            <div class="airtel-wallet-actions">
+              <a href="deposit.html">Deposit</a>
+              <a href="withdraw.html">Withdraw</a>
+              <a href="transfer.html">Transfer</a>
+            </div>
+          </div>
+        </section>
+
+        <div class="app-stats-grid airtel-pills-grid dashboard-stats-grid">
+          <div class="app-stat-card">
+            <p>My Savings</p>
+            <h3 id="homeSavings">UGX 0.00</h3>
+          </div>
+          <div class="app-stat-card">
+            <p>Active Loans</p>
+            <h3 id="homeLoans">0</h3>
+          </div>
+          <div class="app-stat-card">
+            <p>Insurance</p>
+            <h3 id="homeInsurance">None</h3>
+          </div>
+        </div>
+
+        <section class="dashboard-lower-grid">
+          <div class="dashboard-left-column">
+            <div class="card app-actions-card airtel-services-card dashboard-services-card">
+              <div class="section-title-row">
+                <h2>Services</h2>
+                <a href="overview.html">More</a>
+              </div>
+              <div class="quick-actions-grid airtel-actions-grid">
+                <a class="quick-action-item airtel-action" href="deposit.html">
+                  <span class="airtel-icon-badge">DI</span>
+                  <p>Deposit</p>
+                </a>
+                <a class="quick-action-item airtel-action" href="withdraw.html">
+                  <span class="airtel-icon-badge">WD</span>
+                  <p>Withdraw</p>
+                </a>
+                <a class="quick-action-item airtel-action" href="transfer.html">
+                  <span class="airtel-icon-badge">TR</span>
+                  <p>Transfer</p>
+                </a>
+                <a class="quick-action-item airtel-action" href="savings.html">
+                  <span class="airtel-icon-badge">SV</span>
+                  <p>Savings</p>
+                </a>
+                <a class="quick-action-item airtel-action" href="loans.html">
+                  <span class="airtel-icon-badge">LN</span>
+                  <p>Loans</p>
+                </a>
+                <a class="quick-action-item airtel-action" href="insurance.html">
+                  <span class="airtel-icon-badge">IN</span>
+                  <p>Insurance</p>
+                </a>
+                <a class="quick-action-item airtel-action" href="history.html">
+                  <span class="airtel-icon-badge">HS</span>
+                  <p>History</p>
+                </a>
+                <a class="quick-action-item airtel-action" href="profile.html">
+                  <span class="airtel-icon-badge">PF</span>
+                  <p>Profile</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="card dashboard-insights-card">
+              <h3>Smart Tips</h3>
+              <p>Keep your account growing with these quick actions.</p>
+              <div class="dashboard-tip-list">
+                <a href="savings.html"><span>SV</span>Move spare cash to savings today.</a>
+                <a href="history.html"><span>HS</span>Review your weekly spending trends.</a>
+                <a href="insurance.html"><span>IN</span>Check if your cover is up to date.</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-right-column">
+            <div class="card airtel-recent-card dashboard-recent-card">
+              <div class="section-title-row">
+                <h2>Recent Transactions</h2>
+                <a href="history.html">See All</a>
+              </div>
+              <div id="homeRecentList" class="recent-list">
+                <p>No transactions yet.</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-      <div id="homeRecentList" class="recent-list">
-        <p>No transactions yet.</p>
-      </div>
-    </div>
+
+      <footer class="dashboard-main-footer">
+        <p>© 2026 Sente Yo Credits – Fueling Your Next Move</p>
+      </footer>
+    </main>
   </div>
 
   <div class="mobile-bottom-nav airtel-bottom-nav">
@@ -113,10 +179,6 @@
     <a href="history.html">History</a>
     <a href="profile.html">Profile</a>
   </div>
-
-  <footer>
-    <p>© 2025 Sente Yo Credits – Fueling Your Next Move</p>
-  </footer>
 
   <script src="js/auth.js"></script>
   <script src="js/dashboard-home.js"></script>

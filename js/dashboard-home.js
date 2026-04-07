@@ -17,7 +17,12 @@ function formatCurrency(amount) {
 }
 
 function formatDate(dateString) {
-    return new Date(dateString).toLocaleString();
+    return new Date(dateString).toLocaleString('en-UG', {
+        day: '2-digit',
+        month: 'short',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
 }
 
 function maskedValue(value) {
@@ -50,25 +55,32 @@ function renderRecentActivity() {
     const recentList = document.getElementById('homeRecentList');
     if (!recentList || !currentUser) return;
 
-    const recentTransactions = (currentUser.transactions || []).slice(0, 5);
+    const recentTransactions = [...(currentUser.transactions || [])]
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .slice(0, 6);
 
     if (recentTransactions.length === 0) {
-        recentList.innerHTML = '<p>No transactions yet.</p>';
+        recentList.innerHTML = '<div class="dashboard-empty-state">No transactions yet. Start with a deposit or transfer.</div>';
         return;
     }
 
     recentList.innerHTML = recentTransactions.map(t => {
-        const amountColor = t.type === 'Deposit' ? 'var(--primary)' : (t.type === 'Withdrawal' ? 'var(--danger)' : 'var(--secondary)');
-        const sign = t.type === 'Deposit' ? '+' : '-';
+        const isCredit = t.type === 'Deposit';
+        const sign = isCredit ? '+' : '-';
+        const amountClass = isCredit ? 'dashboard-amount-credit' : 'dashboard-amount-debit';
+        const badge = (t.type || 'TR').replace(/\s+/g, '').slice(0, 2).toUpperCase();
 
         return `
-            <div class="recent-item">
-                <div>
-                    <strong>${t.type}</strong>
-                    <p>${t.description || 'Transaction update'}</p>
-                    <small>${formatDate(t.date)}</small>
+            <div class="recent-item dashboard-recent-item">
+                <div class="dashboard-recent-left">
+                    <span class="dashboard-tx-badge">${badge}</span>
+                    <div>
+                        <strong class="dashboard-tx-title">${t.type}</strong>
+                        <p class="dashboard-tx-copy">${t.description || 'Transaction update'}</p>
+                        <small class="dashboard-tx-date">${formatDate(t.date)}</small>
+                    </div>
                 </div>
-                <div class="recent-amount" style="color: ${amountColor};">
+                <div class="recent-amount ${amountClass}">
                     ${hideBalances ? '••••••' : `${sign} ${formatCurrency(t.amount)}`}
                 </div>
             </div>

@@ -6,39 +6,87 @@
   <title>Sente Yo Credits - Transaction History</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="airtel-module-page" data-initial-section="history">
-  <nav class="navbar">
-    <a href="index.html" class="logo"><img src="image/sent_logo_nav.png" alt="Sente Yo Credits logo" class="logo-mark"> SENTE YO CREDITS</a>
-    <div class="nav-links">
-      <a href="dashboard.html">Home</a>
-      <a href="overview.html">Overview</a>
-      <a href="history.html">History</a>
-      <a href="profile.html">Profile</a>
-      <a href="#" id="logoutLink">Logout</a>
-    </div>
-  </nav>
+<body class="airtel-module-page dashboard-sidebar-page dashboard-module-page" data-initial-section="history">
+  <div class="dashboard-shell">
+    <aside class="dashboard-left-nav" aria-label="Dashboard sidebar">
+      <a href="dashboard.html" class="dashboard-brand">
+        <img src="image/sent_logo_nav.png" alt="Sente Yo Credits logo" class="logo-mark">
+        <span>SENTE YO CREDITS</span>
+      </a>
 
-  <div class="container">
-    <div class="card feature-hero">
-      <h1>📜 Transaction History</h1>
-      <p>Review your recent activity and running balances.</p>
-      <div class="feature-account-row">
-        <span id="userName">User</span>
-        <span id="accountNumber">UG-000000</span>
-        <strong id="balanceDisplay">UGX 0.00</strong>
+      <a href="overview.html" class="dashboard-search-link">
+        <span>SR</span>
+        <p>Search</p>
+      </a>
+
+      <nav class="dashboard-side-links">
+        <a href="dashboard.html"><span>HM</span>Home</a>
+        <a href="overview.html"><span>OV</span>Overview</a>
+        <a href="transfer.html"><span>SD</span>Send Money</a>
+        <a class="active" href="history.html"><span>HS</span>History</a>
+        <a href="services.html"><span>SV</span>Services</a>
+        <a href="profile.html"><span>PF</span>Profile</a>
+      </nav>
+
+      <div class="dashboard-side-divider"></div>
+
+      <div class="dashboard-side-pinned">
+        <p>Pinned</p>
+        <a href="savings.html">Savings Space</a>
+        <a href="loans.html">Loan Center</a>
+        <a href="insurance.html">Insurance Cover</a>
       </div>
-    </div>
 
-    <div class="feature-links">
-      <a href="transfer.html">Transfer</a>
-      <a href="deposit.html">Deposit</a>
-      <a href="withdraw.html">Withdraw</a>
-      <a href="overview.html">Overview</a>
-    </div>
+      <a href="#" id="logoutLink" class="dashboard-logout-btn">Sign out</a>
+    </aside>
 
-    <div class="card">
-      <div id="sectionContent"></div>
-    </div>
+    <main class="dashboard-main-wrap">
+      <header class="dashboard-main-top">
+        <div class="dashboard-top-title">
+          <p>Workspace</p>
+          <h2>Transaction History</h2>
+        </div>
+        <div class="dashboard-top-actions">
+          <a class="dashboard-top-pill" href="dashboard.html">Dashboard</a>
+          <a class="dashboard-top-pill" href="history.html">Recent Activity</a>
+          <a class="dashboard-avatar-btn" href="profile.html">ME</a>
+        </div>
+      </header>
+
+      <div class="container app-dashboard airtel-shell dashboard-content-container dashboard-module-content">
+        <section class="dashboard-module-hero">
+          <div>
+            <p class="dashboard-module-kicker">Sente Workspace</p>
+            <h1>Transaction History</h1>
+            <p>Review your recent activity and running balances.</p>
+          </div>
+          <div class="dashboard-module-account">
+            <span id="userName">User</span>
+            <span id="accountNumber">UG-000000</span>
+            <strong id="balanceDisplay">UGX 0.00</strong>
+          </div>
+        </section>
+
+        <div class="dashboard-module-links">
+          <a href="overview.html">Overview</a>
+          <a href="deposit.html">Deposit</a>
+          <a href="withdraw.html">Withdraw</a>
+          <a href="transfer.html">Transfer</a>
+          <a href="savings.html">Savings</a>
+          <a href="loans.html">Loans</a>
+          <a href="insurance.html">Insurance</a>
+          <a href="history.html">History</a>
+        </div>
+
+        <div class="card dashboard-module-card">
+          <div id="sectionContent"></div>
+        </div>
+      </div>
+
+      <footer class="dashboard-main-footer">
+        <p>© 2026 Sente Yo Credits – Fueling Your Next Move</p>
+      </footer>
+    </main>
   </div>
 
   <div class="mobile-bottom-nav airtel-bottom-nav">
@@ -47,10 +95,6 @@
     <a class="active" href="history.html">History</a>
     <a href="profile.html">Profile</a>
   </div>
-
-  <footer>
-    <p>© 2025 Sente Yo Credits – Fueling Your Next Move</p>
-  </footer>
 
   <script src="js/auth.js"></script>
   <script src="js/dashboard.js"></script>
