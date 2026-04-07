@@ -2610,3 +2610,133 @@ footer {
     gap: 0.3rem;
   }
 }
+
+/* Mobile Hamburger Navigation */
+.mobile-hamburger-btn {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(19, 29, 50, 0.92);
+  cursor: pointer;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mobile-hamburger-btn span {
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+.mobile-menu-overlay {
+  display: none;
+}
+
+.mobile-menu-close {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .mobile-hamburger-enabled .mobile-bottom-nav {
+    display: none !important;
+  }
+
+  .mobile-hamburger-enabled.dashboard-sidebar-page .dashboard-content-container {
+    padding-bottom: 1.5rem;
+  }
+
+  .mobile-hamburger-enabled .airtel-shell {
+    padding-bottom: 1.2rem;
+  }
+
+  .mobile-hamburger-enabled .dashboard-main-footer {
+    padding-bottom: 1.2rem;
+  }
+
+  .mobile-hamburger-enabled .mobile-hamburger-btn {
+    display: inline-flex;
+  }
+
+  .mobile-hamburger-enabled .dashboard-top-actions {
+    justify-content: flex-end;
+  }
+
+  .mobile-hamburger-enabled .dashboard-left-nav {
+    display: none;
+  }
+
+  .mobile-hamburger-enabled .mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 8, 13, 0.5);
+    z-index: 1600;
+  }
+
+  .mobile-hamburger-enabled.sidebar-menu-open .mobile-menu-overlay {
+    display: block;
+  }
+
+  .mobile-hamburger-enabled.sidebar-menu-open .dashboard-left-nav {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: min(280px, 84vw);
+    height: 100vh;
+    z-index: 1700;
+    box-shadow: 14px 0 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .mobile-hamburger-enabled .mobile-menu-close {
+    display: inline-flex;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: 1px solid #2b3648;
+    background: #131b28;
+    color: #fff;
+    font-size: 1rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 0.35rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-hamburger-enabled .navbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 0.5rem;
+  }
+
+  .mobile-hamburger-enabled .navbar .nav-links {
+    display: none;
+    width: 100%;
+    order: 3;
+    margin-top: 0.6rem;
+    gap: 0.25rem;
+    background: #121b34;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 0.5rem;
+  }
+
+  .mobile-hamburger-enabled.mobile-nav-open .navbar .nav-links {
+    display: grid;
+  }
+
+  .mobile-hamburger-enabled .navbar .nav-links a {
+    display: block;
+    padding: 0.52rem 0.6rem;
+    border-radius: 8px;
+  }
+}
