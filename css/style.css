@@ -1,25 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', 'Open Sans', sans-serif;
 }
 
 :root {
-  --primary: #00002f;
-  --primary-dark: #000023;
-  --secondary: #f57d00;
-  --secondary-dark: #dc6b00;
-  --danger: #bf4028;
+  --primary: #0b1f3a;
+  --primary-dark: #08172b;
+  --primary-soft: #1c3d6e;
+  --secondary: #ff8c00;
+  --secondary-dark: #e57d00;
+  --danger: #eb5757;
   --danger-dark: #952c1a;
-  --dark: #0d1138;
-  --light: #f7f8fc;
-  --gray: #6c757d;
-  --border: #dde3ef;
-  --brand-orange-soft: #fff2e4;
-  --brand-navy-soft: #e9edff;
+  --dark: #333333;
+  --light: #f5f7fa;
+  --gray: #5f6f82;
+  --border: #d9e2ee;
+  --brand-orange-soft: #fff4e8;
+  --brand-navy-soft: #eaf1fb;
+  --link-soft: #2f80ed;
+  --success: #27ae60;
+  --error: #eb5757;
 }
 
 body {
@@ -314,7 +327,7 @@ body {
 footer {
   text-align: center;
   padding: 2rem;
-  background: linear-gradient(120deg, var(--primary), #1f2b67);
+  background: linear-gradient(120deg, var(--primary), var(--primary-soft));
   border-top: 3px solid var(--secondary);
   color: #cbdbe6;
   margin-top: 2rem;
@@ -354,7 +367,7 @@ footer {
 
 .airtel-home-page .navbar,
 .airtel-module-page .navbar {
-  background: linear-gradient(120deg, var(--primary) 0%, #1f2b67 62%, var(--secondary) 130%);
+  background: linear-gradient(120deg, var(--primary) 0%, var(--primary-soft) 62%, var(--secondary) 130%);
   box-shadow: 0 12px 24px rgba(0, 0, 47, 0.28);
 }
 
@@ -395,7 +408,7 @@ footer {
 
 .airtel-home-page .btn-secondary:hover,
 .airtel-module-page .btn-secondary:hover {
-  background: #1a245c;
+  background: #355d9e;
 }
 
 .airtel-home-page .form-group input:focus,
@@ -405,7 +418,7 @@ footer {
 .airtel-module-page .form-group select:focus,
 .airtel-module-page .form-group textarea:focus {
   border-color: var(--secondary);
-  box-shadow: 0 0 0 3px rgba(245, 125, 0, 0.16);
+  box-shadow: 0 0 0 3px rgba(243, 154, 42, 0.18);
 }
 
 .app-dashboard {
@@ -417,7 +430,7 @@ footer {
 }
 
 .app-hero {
-  background: linear-gradient(140deg, var(--secondary) -18%, #f99a2d 22%, var(--primary) 72%, #1f2b67 100%);
+  background: linear-gradient(140deg, var(--secondary) -18%, #f7b050 22%, var(--primary) 72%, var(--primary-soft) 100%);
   color: #fff;
   border-radius: 28px;
   padding: 1.35rem 1.35rem 3rem;
@@ -432,7 +445,7 @@ footer {
   width: 260px;
   height: 260px;
   border-radius: 50%;
-  background: rgba(245, 125, 0, 0.28);
+  background: rgba(243, 154, 42, 0.24);
   right: -80px;
   top: -110px;
 }
@@ -450,7 +463,7 @@ footer {
   display: inline-block;
   padding: 0.34rem 0.76rem;
   border: 1px solid rgba(255, 255, 255, 0.78);
-  background: rgba(245, 125, 0, 0.26);
+  background: rgba(243, 154, 42, 0.24);
   border-radius: 999px;
   font-size: 0.75rem;
   font-weight: 700;
@@ -682,7 +695,7 @@ footer {
 }
 
 .feature-hero {
-  background: linear-gradient(130deg, var(--secondary) -15%, #f99b31 24%, var(--primary) 72%, #1f2b67 100%);
+  background: linear-gradient(130deg, var(--secondary) -15%, #f7b359 24%, var(--primary) 72%, var(--primary-soft) 100%);
   color: #fff;
   border-radius: 24px;
   box-shadow: 0 16px 32px rgba(0, 0, 47, 0.22);
@@ -812,7 +825,7 @@ footer {
 
 /* Dashboard Left Sidebar Layout */
 .dashboard-sidebar-page {
-  background: #0c0f16;
+  background: #fff1e3;
 }
 
 .dashboard-sidebar-page .dashboard-shell {
@@ -822,9 +835,9 @@ footer {
 }
 
 .dashboard-left-nav {
-  background: #0f131d;
-  border-right: 1px solid #1e2533;
-  color: #e3e9f1;
+  background: linear-gradient(175deg, #f5aa4c 0%, #e78d1b 100%);
+  border-right: 1px solid #efbc80;
+  color: #eaf1fb;
   padding: 1.1rem 0.9rem;
   display: flex;
   flex-direction: column;
@@ -852,21 +865,21 @@ footer {
 
 .dashboard-search-link {
   text-decoration: none;
-  color: #c6d3df;
+  color: #fff8ef;
   display: flex;
   align-items: center;
   gap: 0.55rem;
   padding: 0.55rem 0.65rem;
-  border: 1px solid #222b3b;
+  border: 1px solid rgba(255, 255, 255, 0.42);
   border-radius: 11px;
-  background: #141b28;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .dashboard-search-link span {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 1px solid #2a3649;
+  border: 1px solid rgba(255, 255, 255, 0.36);
   font-size: 0.56rem;
   display: grid;
   place-items: center;
@@ -885,7 +898,7 @@ footer {
 
 .dashboard-side-links a {
   text-decoration: none;
-  color: #d5dce5;
+  color: #fff9f2;
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -897,7 +910,7 @@ footer {
 
 .dashboard-side-links a:hover,
 .dashboard-side-links a.active {
-  background: #1a2333;
+  background: rgba(255, 255, 255, 0.16);
   color: #ffffff;
 }
 
@@ -905,22 +918,22 @@ footer {
   width: 24px;
   height: 24px;
   border-radius: 7px;
-  background: #1f2a3d;
-  border: 1px solid #2a3850;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   display: grid;
   place-items: center;
   font-size: 0.56rem;
   font-weight: 700;
-  color: #ffcf79;
+  color: #29508d;
 }
 
 .dashboard-side-divider {
-  border-top: 1px solid #222a39;
+  border-top: 1px solid rgba(255, 255, 255, 0.26);
   margin: 0.25rem 0;
 }
 
 .dashboard-side-pinned p {
-  color: #8391a4;
+  color: #fff0dd;
   font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -935,14 +948,14 @@ footer {
 
 .dashboard-side-pinned a {
   text-decoration: none;
-  color: #c7d2de;
+  color: #fff7ef;
   padding: 0.4rem 0.55rem;
   border-radius: 8px;
   font-size: 0.84rem;
 }
 
 .dashboard-side-pinned a:hover {
-  background: #182131;
+  background: rgba(255, 255, 255, 0.14);
   color: #ffffff;
 }
 
@@ -951,8 +964,8 @@ footer {
   text-decoration: none;
   text-align: center;
   color: #f3f7fb;
-  background: linear-gradient(120deg, #1e2d44 0%, #2a3d58 100%);
-  border: 1px solid #354964;
+  background: linear-gradient(120deg, #3f73b7 0%, #2f5d9f 100%);
+  border: 1px solid #6f94c8;
   border-radius: 11px;
   padding: 0.62rem 0.5rem;
   font-size: 0.86rem;
@@ -961,9 +974,9 @@ footer {
 
 .dashboard-main-wrap {
   background:
-    radial-gradient(940px 380px at 15% -10%, #fff3e5 0%, transparent 70%),
-    radial-gradient(940px 380px at 90% -10%, #e9edff 0%, transparent 68%),
-    #f7f8fc;
+    radial-gradient(940px 380px at 15% -10%, #edf3ff 0%, transparent 70%),
+    radial-gradient(940px 380px at 90% -10%, #fff5e9 0%, transparent 68%),
+    #f8fafd;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -995,7 +1008,7 @@ footer {
 }
 
 .dashboard-main-top h2 {
-  color: #13183c;
+  color: #9c5c14;
   font-size: 1.2rem;
 }
 
@@ -1007,7 +1020,7 @@ footer {
 
 .dashboard-top-pill {
   text-decoration: none;
-  color: #203055;
+  color: #b86a14;
   border: 1px solid #d7deee;
   border-radius: 999px;
   background: #fff;
@@ -1023,7 +1036,7 @@ footer {
   border-radius: 50%;
   background: #ffffff;
   border: 1px solid #d4dfef;
-  color: #1e2c5d;
+  color: #b86a14;
   display: grid;
   place-items: center;
   text-decoration: none;
@@ -1328,8 +1341,8 @@ footer {
 
 .dashboard-public-page .dashboard-main-wrap {
   background:
-    radial-gradient(980px 420px at 15% -12%, #fff0df 0%, transparent 70%),
-    radial-gradient(980px 420px at 92% -14%, #e8edff 0%, transparent 68%),
+    radial-gradient(980px 420px at 15% -12%, #e8edff 0%, transparent 70%),
+    radial-gradient(980px 420px at 92% -14%, #fff0df 0%, transparent 68%),
     #f7f8fc;
 }
 
@@ -1338,10 +1351,10 @@ footer {
 }
 
 .dashboard-public-hero {
-  background: linear-gradient(136deg, #1b2554 0%, #2a3467 45%, #f57d00 140%);
+  background: linear-gradient(136deg, #f39a2a 0%, #f7b359 45%, #3f73b7 138%);
   color: #fff;
   border-radius: 22px;
-  border: 1px solid #2c3d74;
+  border: 1px solid #efbd86;
   box-shadow: 0 16px 34px rgba(0, 0, 47, 0.2);
   padding: 1.2rem;
   margin-bottom: 1rem;
@@ -1381,7 +1394,7 @@ footer {
 
 .dashboard-public-actions a.primary {
   background: #fff;
-  color: #16214d;
+  color: #bb6d17;
 }
 
 .dashboard-public-actions a.secondary {
@@ -1512,9 +1525,9 @@ footer {
 
 .dashboard-cta-banner {
   margin-top: 1rem;
-  border: 1px solid #26365f;
+  border: 1px solid #eebf8b;
   border-radius: 20px;
-  background: linear-gradient(130deg, #1f2b67 0%, #172455 40%, #f57d00 142%);
+  background: linear-gradient(130deg, #f39a2a 0%, #f7b359 40%, #3f73b7 142%);
   color: #ffffff;
   box-shadow: 0 14px 30px rgba(0, 0, 47, 0.18);
   padding: 1.1rem;
@@ -1640,8 +1653,8 @@ footer {
   width: 0.42rem;
   height: 0.42rem;
   border-radius: 50%;
-  background: #f57d00;
-  box-shadow: 0 0 0 4px rgba(245, 125, 0, 0.18);
+  background: var(--secondary);
+  box-shadow: 0 0 0 4px rgba(243, 154, 42, 0.2);
 }
 
 .auth-demo-box,
@@ -1756,7 +1769,7 @@ footer {
 }
 
 .dashboard-public-page .dashboard-side-pinned a.primary {
-  background: #1a2333;
+  background: var(--primary);
   color: #fff;
 }
 
@@ -1772,7 +1785,7 @@ footer {
 
 .dashboard-main-footer {
   margin-top: auto;
-  background: linear-gradient(120deg, var(--primary), #1f2b67);
+  background: linear-gradient(120deg, var(--primary), var(--primary-soft));
   border-top: 3px solid var(--secondary);
   color: #cbdbe6;
   text-align: center;
@@ -1910,9 +1923,9 @@ footer {
 /* Modern Auth Pages */
 .auth-modern-page {
   background:
-    radial-gradient(760px 300px at 12% 0%, #d9ebff 0%, transparent 64%),
-    radial-gradient(760px 300px at 88% 0%, #e8f2ff 0%, transparent 64%),
-    #eef4fb;
+    radial-gradient(760px 300px at 12% 0%, #fff2e1 0%, transparent 64%),
+    radial-gradient(760px 300px at 88% 0%, #fff7ec 0%, transparent 64%),
+    #f5f8fe;
 }
 
 .auth-modern-wrap {
@@ -1941,13 +1954,13 @@ footer {
   position: relative;
   overflow: hidden;
   border-radius: 24px;
-  border: 1px solid #2f69a7;
+  border: 1px solid #edbf8d;
   color: #ffffff;
   box-shadow: 0 18px 34px rgba(12, 56, 113, 0.25);
 }
 
 .auth-login-visual {
-  background: linear-gradient(145deg, #0b6bc8 0%, #0d4f99 45%, #0a376f 100%);
+  background: linear-gradient(145deg, #f39a2a 0%, #f2aa44 45%, #dd8516 100%);
   padding: 2.1rem 2rem;
   min-height: 500px;
   display: flex;
@@ -1969,7 +1982,7 @@ footer {
   height: 360px;
   left: -200px;
   top: -120px;
-  background: radial-gradient(circle at 55% 45%, rgba(101, 188, 255, 0.8), rgba(31, 96, 171, 0.35) 60%, transparent 72%);
+  background: radial-gradient(circle at 55% 45%, rgba(255, 214, 153, 0.8), rgba(243, 154, 42, 0.34) 60%, transparent 72%);
   z-index: -1;
 }
 
@@ -1978,14 +1991,14 @@ footer {
   height: 220px;
   right: -70px;
   bottom: -65px;
-  background: radial-gradient(circle at 38% 35%, rgba(126, 209, 255, 0.78), rgba(33, 111, 194, 0.4) 64%, transparent 76%);
+  background: radial-gradient(circle at 38% 35%, rgba(255, 223, 173, 0.78), rgba(238, 148, 32, 0.38) 64%, transparent 76%);
   z-index: -1;
 }
 
 .auth-signup-welcome {
   background:
-    linear-gradient(150deg, rgba(12, 96, 184, 0.96) 0%, rgba(19, 84, 154, 0.9) 48%, rgba(12, 55, 108, 0.94) 100%),
-    radial-gradient(420px 180px at 20% 80%, rgba(108, 186, 247, 0.25) 0%, transparent 76%);
+    linear-gradient(150deg, rgba(243, 154, 42, 0.9) 0%, rgba(241, 172, 84, 0.88) 48%, rgba(222, 134, 23, 0.92) 100%),
+    radial-gradient(420px 180px at 20% 80%, rgba(255, 216, 154, 0.24) 0%, transparent 76%);
   min-height: 560px;
 }
 
@@ -1993,8 +2006,8 @@ footer {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(360px 120px at 80% 15%, rgba(86, 177, 245, 0.18) 0%, transparent 72%),
-    linear-gradient(180deg, transparent 60%, rgba(4, 25, 55, 0.28) 100%);
+    radial-gradient(360px 120px at 80% 15%, rgba(255, 224, 176, 0.2) 0%, transparent 72%),
+    linear-gradient(180deg, transparent 60%, rgba(176, 102, 14, 0.24) 100%);
 }
 
 .auth-signup-content {
@@ -2162,14 +2175,14 @@ footer {
 
 .auth-submit-btn {
   width: 100%;
-  background: linear-gradient(120deg, #0d5faf 0%, #0f4c8f 100%);
+  background: linear-gradient(120deg, #f39a2a 0%, #df8514 100%);
   border-radius: 12px;
   font-size: 0.92rem;
   font-weight: 700;
 }
 
 .auth-submit-btn:hover {
-  background: linear-gradient(120deg, #0c559d 0%, #0c427b 100%);
+  background: linear-gradient(120deg, #ee9525 0%, #cf780d 100%);
 }
 
 .auth-divider {
@@ -2271,9 +2284,9 @@ footer {
 /* Circle Style Auth */
 .auth-circle-page {
   background:
-    radial-gradient(780px 260px at 12% -8%, #d6e8ff 0%, transparent 65%),
-    radial-gradient(780px 260px at 88% -8%, #d6e8ff 0%, transparent 65%),
-    #f1f5fb;
+    radial-gradient(780px 260px at 12% -8%, #fff2e1 0%, transparent 65%),
+    radial-gradient(780px 260px at 88% -8%, #fff7ec 0%, transparent 65%),
+    #f5f8fe;
 }
 
 .auth-circle-page .auth-modern-wrap {
@@ -2309,7 +2322,7 @@ footer {
   border-radius: 50%;
   left: -470px;
   top: -170px;
-  background: linear-gradient(145deg, #0f7ad5 0%, #0c64bd 40%, #0a428f 100%);
+  background: linear-gradient(145deg, #f5aa45 0%, #ef992d 40%, #d98213 100%);
   z-index: -2;
 }
 
@@ -2321,7 +2334,7 @@ footer {
   border-radius: 50%;
   left: -235px;
   bottom: -210px;
-  background: linear-gradient(145deg, #0d75ce 0%, #0a4fa0 68%, #0a3c88 100%);
+  background: linear-gradient(145deg, #f2a63f 0%, #e89021 68%, #d0790b 100%);
   z-index: -1;
 }
 
@@ -2354,7 +2367,7 @@ footer {
 .auth-circle-bubble {
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(145deg, #1a8de6 0%, #0d6ac0 46%, #0a4a9b 100%);
+  background: linear-gradient(145deg, #f6b659 0%, #ef9f33 46%, #dc8619 100%);
   box-shadow: inset 0 8px 20px rgba(255, 255, 255, 0.14);
 }
 
@@ -2436,7 +2449,7 @@ footer {
   transform: translateY(-50%);
   border: 0;
   background: transparent;
-  color: #4676ad;
+  color: #c6781c;
   font-size: 0.66rem;
   font-weight: 700;
   cursor: pointer;
@@ -2464,7 +2477,7 @@ footer {
 }
 
 .auth-circle-options a {
-  color: #4f78a4;
+  color: #be741b;
   text-decoration: none;
   font-size: 0.66rem;
   font-weight: 700;
@@ -2500,14 +2513,14 @@ footer {
 }
 
 .auth-circle-btn-primary {
-  border: 1px solid #0e4e91;
-  background: linear-gradient(120deg, #0f5ea8 0%, #0d4c8f 100%);
+  border: 1px solid #de8717;
+  background: linear-gradient(120deg, #f39a2a 0%, #df8514 100%);
   color: #ffffff;
   cursor: pointer;
 }
 
 .auth-circle-btn-primary:hover {
-  background: linear-gradient(120deg, #0d569b 0%, #0b447f 100%);
+  background: linear-gradient(120deg, #eb9527 0%, #cf780d 100%);
 }
 
 .auth-circle-or {
@@ -2533,7 +2546,7 @@ footer {
 
 .auth-circle-footer-copy a {
   text-decoration: none;
-  color: #2b6daa;
+  color: #be741b;
   font-weight: 700;
 }
 
@@ -2618,7 +2631,7 @@ footer {
   height: 42px;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.28);
-  background: rgba(19, 29, 50, 0.92);
+  background: rgba(236, 148, 36, 0.96);
   cursor: pointer;
   padding: 0;
   align-items: center;
@@ -2631,7 +2644,7 @@ footer {
   width: 18px;
   height: 2px;
   border-radius: 999px;
-  background: #ffffff;
+  background: #173a71;
 }
 
 .mobile-menu-overlay {
@@ -2674,7 +2687,7 @@ footer {
   .mobile-hamburger-enabled .mobile-menu-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(5, 8, 13, 0.5);
+    background: rgba(95, 53, 4, 0.35);
     z-index: 1600;
   }
 
@@ -2699,7 +2712,7 @@ footer {
     height: 34px;
     border-radius: 8px;
     border: 1px solid #2b3648;
-    background: #131b28;
+    background: #f1a846;
     color: #fff;
     font-size: 1rem;
     align-items: center;
@@ -2724,7 +2737,7 @@ footer {
     order: 3;
     margin-top: 0.6rem;
     gap: 0.25rem;
-    background: #121b34;
+    background: #e79228;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     padding: 0.5rem;
@@ -2738,5 +2751,650 @@ footer {
     display: block;
     padding: 0.52rem 0.6rem;
     border-radius: 8px;
+  }
+}
+
+/* Professional Theme System */
+body {
+  background: #f5f7fa;
+  color: #333333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #0b1f3a;
+}
+
+a {
+  color: #2f80ed;
+}
+
+a:hover {
+  color: #2369c4;
+}
+
+.navbar,
+.airtel-home-page .navbar,
+.airtel-module-page .navbar,
+footer,
+.dashboard-main-footer {
+  background: linear-gradient(120deg, #0b1f3a 0%, #1c3d6e 100%);
+}
+
+.dashboard-sidebar-page {
+  background: #edf2f9;
+}
+
+.dashboard-left-nav {
+  background: linear-gradient(180deg, #0b1f3a 0%, #1c3d6e 100%);
+  border-right-color: #345a92;
+}
+
+.dashboard-search-link {
+  color: #eef4ff;
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dashboard-side-links a {
+  color: #e8f0ff;
+}
+
+.dashboard-side-links a span {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #ffd18a;
+}
+
+.dashboard-side-links a:hover,
+.dashboard-side-links a.active {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.dashboard-side-pinned p {
+  color: #b9cce7;
+}
+
+.dashboard-side-pinned a {
+  color: #dce8fb;
+}
+
+.dashboard-side-pinned a:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.dashboard-logout-btn {
+  background: linear-gradient(120deg, #ff8c00 0%, #e57d00 100%);
+  border-color: #ffb056;
+}
+
+.dashboard-main-wrap,
+.dashboard-public-page .dashboard-main-wrap {
+  background:
+    radial-gradient(940px 380px at 15% -10%, #eaf1fb 0%, transparent 70%),
+    radial-gradient(940px 380px at 90% -10%, #fff4e8 0%, transparent 68%),
+    #f5f7fa;
+}
+
+.app-hero,
+.feature-hero,
+.dashboard-public-hero,
+.dashboard-cta-banner,
+.landing-hero-card,
+.auth-login-visual,
+.auth-signup-welcome,
+.auth-circle-art {
+  background: linear-gradient(135deg, #0b1f3a 0%, #1c3d6e 100%);
+  border-color: #2e5288;
+}
+
+.app-hero h1,
+.feature-hero h1,
+.dashboard-public-hero h1,
+.dashboard-cta-banner h3,
+.landing-hero-card h1,
+.auth-login-visual h1,
+.auth-signup-content h1,
+.auth-circle-copy h1,
+.auth-circle-copy h3 {
+  color: #ffffff;
+}
+
+.app-hero p,
+.feature-hero p,
+.dashboard-public-hero p,
+.dashboard-cta-banner p,
+.landing-hero-card p,
+.auth-login-visual p,
+.auth-signup-content p,
+.auth-circle-copy p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.btn,
+.auth-submit-btn,
+.auth-circle-btn-primary,
+.dashboard-public-actions a.primary {
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-weight: 700;
+}
+
+.btn-primary,
+.auth-submit-btn,
+.auth-circle-btn-primary,
+.dashboard-public-actions a.primary,
+.dashboard-logout-btn {
+  background: #ff8c00;
+  border: 1px solid #e57d00;
+  color: #ffffff;
+}
+
+.btn-primary:hover,
+.auth-submit-btn:hover,
+.auth-circle-btn-primary:hover,
+.dashboard-public-actions a.primary:hover,
+.dashboard-logout-btn:hover {
+  background: #e57d00;
+}
+
+.btn-secondary {
+  background: #1c3d6e;
+}
+
+.btn-secondary:hover {
+  background: #16335e;
+}
+
+.card,
+.dashboard-public-card,
+.service-card,
+.auth-login-card,
+.auth-signup-card,
+.auth-circle-shell {
+  border: 1px solid #e1e8f2;
+  box-shadow: 0 10px 24px rgba(11, 31, 58, 0.08);
+}
+
+.dashboard-content-container,
+.dashboard-public-content {
+  background: transparent;
+}
+
+.dashboard-public-content > section:not(.dashboard-public-hero):not(.dashboard-cta-banner):nth-of-type(even) {
+  background: #f5f7fa;
+  border: 1px solid #e2e8f2;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.landing-hero-card {
+  text-align: center;
+}
+
+.landing-hero-title {
+  color: #fff;
+}
+
+.landing-hero-copy {
+  font-size: 1.12rem;
+  margin: 1rem 0;
+}
+
+.landing-hero-actions {
+  margin: 1.6rem 0;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.landing-hero-outline {
+  border-color: #fff;
+  color: #fff;
+}
+
+.landing-services-grid {
+  background: #f5f7fa;
+  border: 1px solid #e2e8f2;
+  border-radius: 18px;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.landing-metrics-grid {
+  margin-top: 2rem;
+}
+
+.landing-metric-card {
+  text-align: center;
+}
+
+.quick-actions-grid-spaced {
+  margin-top: 0.8rem;
+}
+
+.quick-actions-grid-soft-spaced {
+  margin-top: 0.7rem;
+}
+
+.contact-form-message {
+  margin-top: 1rem;
+}
+
+.map-directions-copy {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-top: 0.5rem;
+}
+
+.faq-grid-spaced {
+  margin-top: 0.65rem;
+}
+
+.service-icon,
+.airtel-icon-badge {
+  color: #ff8c00;
+}
+
+.alert-success {
+  background: #e8f7ee;
+  color: #1f7f46;
+  border-color: #ccebd9;
+}
+
+.alert-error {
+  background: #fdeeee;
+  color: #b53939;
+  border-color: #f6c8c8;
+}
+
+.mobile-hamburger-btn {
+  background: rgba(11, 31, 58, 0.95);
+}
+
+.mobile-hamburger-btn span {
+  background: #ffffff;
+}
+
+/* Professional Color Distribution Refinement */
+.dashboard-main-top {
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid #dee6f0;
+}
+
+.dashboard-main-top p {
+  color: #73839a;
+}
+
+.dashboard-main-top h2 {
+  color: #0b1f3a;
+}
+
+.dashboard-top-pill {
+  color: #1c3d6e;
+  border-color: #d9e3ef;
+  background: #ffffff;
+}
+
+.dashboard-top-pill:hover {
+  border-color: #2f80ed;
+}
+
+.dashboard-avatar-btn {
+  color: #1c3d6e;
+  border-color: #d6e2f0;
+  background: #ffffff;
+}
+
+.app-stat-card,
+.app-actions-card,
+.airtel-recent-card,
+.dashboard-recent-card,
+.dashboard-services-card,
+.dashboard-insights-card,
+.dashboard-module-card,
+.dashboard-module-account,
+.dashboard-trust-chip,
+.dashboard-step-card,
+.dashboard-public-card,
+.service-card {
+  background: #ffffff;
+  border-color: #e1e8f2;
+  box-shadow: 0 10px 22px rgba(11, 31, 58, 0.07);
+}
+
+.service-card:hover,
+.dashboard-public-page .service-card:hover {
+  border-color: #2f80ed;
+  box-shadow: 0 14px 28px rgba(11, 31, 58, 0.1);
+}
+
+.section-title-row a,
+.dashboard-public-chip-row a,
+.dashboard-module-links a,
+.feature-links a {
+  color: #1c3d6e;
+}
+
+.dashboard-public-chip-row a {
+  background: #f7f9fc;
+  border-color: #dce5f2;
+}
+
+.airtel-wallet-actions a {
+  background: #ffffff;
+  border: 1px solid #d7e3f5;
+  color: #1c3d6e;
+}
+
+.airtel-wallet-actions a:hover {
+  border-color: #ff8c00;
+  color: #bf6e0e;
+}
+
+.airtel-icon-badge {
+  background: linear-gradient(145deg, #f4f8ff, #ffffff);
+  border: 1px solid #cfe0f6;
+  color: #ff8c00;
+}
+
+.recent-item,
+.dashboard-recent-item {
+  border-color: #e1e8f2;
+}
+
+.dashboard-public-actions a.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.dashboard-public-page .dashboard-side-pinned a.primary {
+  background: #1c3d6e;
+}
+
+.auth-login-card,
+.auth-signup-card,
+.auth-circle-shell {
+  background: #ffffff;
+  border-color: #dde6f2;
+}
+
+.auth-alt-btn,
+.auth-circle-btn-secondary {
+  border-color: #c7d3e5;
+  color: #1c3d6e;
+  background: #ffffff;
+}
+
+.landing-services-grid,
+.dashboard-public-content > section:not(.dashboard-public-hero):not(.dashboard-cta-banner):nth-of-type(even) {
+  background: #f5f7fa;
+  border-color: #e2e8f2;
+}
+
+@media (max-width: 980px) {
+  .mobile-hamburger-enabled .mobile-menu-overlay {
+    background: rgba(11, 31, 58, 0.42);
+  }
+
+  .mobile-hamburger-enabled .mobile-menu-close {
+    background: #1c3d6e;
+    border-color: #4e76b3;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-hamburger-enabled .navbar .nav-links {
+    background: #0b1f3a;
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+}
+
+/* Bank Polish Final */
+body {
+  background: #f5f7fa;
+  color: #333333;
+}
+
+.navbar,
+.airtel-home-page .navbar,
+.airtel-module-page .navbar,
+footer,
+.dashboard-main-footer {
+  background: linear-gradient(120deg, #0b1f3a 0%, #15315a 100%);
+}
+
+.dashboard-sidebar-page {
+  background: #edf2f9;
+}
+
+.dashboard-left-nav {
+  background: linear-gradient(180deg, #0b1f3a 0%, #15315a 100%);
+  border-right-color: #2f4f80;
+}
+
+.dashboard-main-wrap,
+.dashboard-public-page .dashboard-main-wrap {
+  background: #f5f7fa;
+}
+
+.app-hero,
+.feature-hero,
+.dashboard-public-hero,
+.dashboard-cta-banner,
+.landing-hero-card,
+.auth-login-visual,
+.auth-signup-welcome,
+.auth-circle-art {
+  background: linear-gradient(135deg, #0b1f3a 0%, #1c3d6e 100%);
+  border-color: #2b4d82;
+}
+
+.dashboard-public-actions a.primary,
+.btn-primary,
+.auth-submit-btn,
+.auth-circle-btn-primary,
+.dashboard-logout-btn {
+  background: #ff8c00;
+  border: 1px solid #e57d00;
+  color: #ffffff;
+}
+
+.dashboard-public-actions a.primary:hover,
+.btn-primary:hover,
+.auth-submit-btn:hover,
+.auth-circle-btn-primary:hover,
+.dashboard-logout-btn:hover {
+  background: #e57d00;
+}
+
+.btn-secondary {
+  background: #1c3d6e;
+}
+
+.btn-secondary:hover {
+  background: #15315a;
+}
+
+.dashboard-public-actions a.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.landing-hero-outline {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.card,
+.dashboard-public-card,
+.service-card,
+.app-stat-card,
+.dashboard-module-card,
+.dashboard-recent-card,
+.dashboard-insights-card,
+.auth-login-card,
+.auth-signup-card,
+.auth-circle-shell {
+  background: #ffffff;
+  border: 1px solid #dfe7f2;
+  box-shadow: 0 10px 22px rgba(11, 31, 58, 0.08);
+}
+
+.dashboard-public-content > section:not(.dashboard-public-hero):not(.dashboard-cta-banner) {
+  background: #ffffff;
+  border: 1px solid #e1e8f2;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.dashboard-public-content > section:not(.dashboard-public-hero):not(.dashboard-cta-banner):nth-of-type(even) {
+  background: #f7f9fc;
+}
+
+.landing-services-grid {
+  background: #f7f9fc;
+  border: 1px solid #e1e8f2;
+}
+
+.service-card:hover,
+.dashboard-public-page .service-card:hover {
+  border-color: #2f80ed;
+  box-shadow: 0 14px 28px rgba(11, 31, 58, 0.12);
+}
+
+.airtel-icon-badge,
+.service-icon {
+  color: #ff8c00;
+}
+
+.section-title-row a,
+.dashboard-public-chip-row a,
+.dashboard-module-links a,
+.feature-links a,
+.dashboard-top-pill {
+  color: #1c3d6e;
+}
+
+.dashboard-public-chip-row a {
+  background: #f8fafd;
+  border: 1px solid #dbe5f2;
+}
+
+.airtel-wallet-actions a {
+  background: #ffffff;
+  border: 1px solid #d9e4f3;
+  color: #1c3d6e;
+}
+
+.airtel-wallet-actions a:hover {
+  border-color: #ff8c00;
+}
+
+.mobile-hamburger-btn {
+  background: rgba(11, 31, 58, 0.95);
+}
+
+.mobile-hamburger-btn span {
+  background: #ffffff;
+}
+
+@media (max-width: 980px) {
+  .mobile-hamburger-enabled .mobile-menu-overlay {
+    background: rgba(11, 31, 58, 0.46);
+  }
+
+  .mobile-hamburger-enabled .mobile-menu-close {
+    background: #1c3d6e;
+    border-color: #476ea7;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-hamburger-enabled .navbar .nav-links {
+    background: #0b1f3a;
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+}
+
+/* Index Page Repair */
+.public-index-page .container {
+  max-width: 1120px;
+}
+
+.public-index-page .landing-hero-card {
+  background: linear-gradient(135deg, #0b1f3a 0%, #1c3d6e 100%);
+  border: 1px solid #2b4d82;
+  color: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 16px 32px rgba(11, 31, 58, 0.2);
+}
+
+.public-index-page .brand-hero-logo {
+  width: min(160px, 62%);
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.35rem;
+}
+
+.public-index-page .landing-hero-title {
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+
+.public-index-page .landing-hero-copy {
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.public-index-page .landing-hero-actions {
+  margin: 1rem 0 0.2rem;
+}
+
+.public-index-page .landing-services-grid {
+  margin-top: 1.6rem;
+}
+
+.public-index-page .landing-service-badge {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 0.6rem;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  border: 1px solid #d9e4f4;
+  color: #ff8c00;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.public-index-page .landing-metrics-grid .landing-metric-card h3 {
+  color: #0b1f3a;
+  font-size: 1.35rem;
+}
+
+.public-index-page .landing-metrics-grid .landing-metric-card p {
+  color: #5f6f82;
+}
+
+@media (max-width: 768px) {
+  .public-index-page .landing-hero-actions {
+    width: 100%;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .public-index-page .landing-hero-actions .btn {
+    width: 100%;
+    text-align: center;
   }
 }
