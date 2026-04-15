@@ -3,75 +3,750 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sente Yo Credits - Welcome</title>
-  <link rel="stylesheet" href="css/style.css?v=20260407d">
+  <title>Sente Yo Credits</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --sente-red: #c2002f;
+      --sente-red-dark: #9f0027;
+      --sente-charcoal: #1e1e1e;
+      --sente-ink: #202020;
+      --sente-text-soft: #5e5e5e;
+      --sente-bg-soft: #f5f5f6;
+      --sente-border: #e6e6e8;
+      --radius: 16px;
+      --shadow: 0 16px 34px rgba(0, 0, 0, 0.09);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #ffffff;
+      color: var(--sente-ink);
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .top-segments {
+      background: #ffffff;
+      border-bottom: 1px solid var(--sente-border);
+    }
+
+    .segment-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .segment-links a {
+      font-size: 0.9rem;
+      color: #4d4d4d;
+      padding: 6px 12px;
+      border-radius: 999px;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    .segment-links a.active,
+    .segment-links a:hover {
+      color: var(--sente-red);
+      background: #fde7ed;
+    }
+
+    .main-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #fff;
+      border-bottom: 1px solid var(--sente-border);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .main-nav {
+      min-height: 90px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo-shell {
+      width: 74px;
+      height: 74px;
+      border-radius: 18px;
+      background: linear-gradient(140deg, #ffffff, #f7f7f7);
+      border: 1px solid #ececee;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      flex-shrink: 0;
+    }
+
+    .brand-logo-shell img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-name strong {
+      font-size: 1.2rem;
+      color: #1d1d1f;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-name span {
+      font-size: 0.78rem;
+      color: var(--sente-text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-top: 4px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-light {
+      border-color: var(--sente-border);
+      color: #37373a;
+      background: #fff;
+    }
+
+    .btn-light:hover {
+      background: #f8f8f9;
+    }
+
+    .btn-primary {
+      background: var(--sente-red);
+      border-color: var(--sente-red);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--sente-red-dark);
+    }
+
+    .hero-strip {
+      background: linear-gradient(120deg, #22040d, #9a0125 55%, #ca0d3e);
+      color: #fff;
+      padding: 46px 0 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-strip::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      top: -190px;
+      right: -80px;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-copy p.kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.78rem;
+      opacity: 0.84;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+
+    .hero-copy p {
+      font-size: 1rem;
+      max-width: 650px;
+      color: rgba(255, 255, 255, 0.93);
+    }
+
+    .hero-ads {
+      margin-top: -14px;
+      padding-bottom: 22px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .hero-card {
+      border-radius: var(--radius);
+      color: #fff;
+      padding: 24px 22px;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.12));
+    }
+
+    .hero-card > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-card h2 {
+      font-size: 1.35rem;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .hero-card p {
+      font-size: 0.93rem;
+      opacity: 0.96;
+      margin-bottom: 12px;
+    }
+
+    .hero-card a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .card-account {
+      background: radial-gradient(circle at 15% 20%, #e0507d 0%, #b00735 55%, #520417 100%);
+    }
+
+    .card-loan {
+      background: radial-gradient(circle at 85% 15%, #f6a3b8 0%, #9e0b36 58%, #4a071d 100%);
+    }
+
+    .card-savings {
+      background: radial-gradient(circle at 30% 0%, #ffd7e4 0%, #8a0a30 54%, #3f0618 100%);
+    }
+
+    section {
+      padding: 54px 0;
+    }
+
+    h3.section-title {
+      font-size: 1.8rem;
+      margin-bottom: 22px;
+      color: #1f1f21;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .quick-item {
+      border: 1px solid var(--sente-border);
+      border-radius: 14px;
+      background: #fff;
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .quick-item:hover {
+      border-color: #f1a5ba;
+      box-shadow: 0 12px 20px rgba(194, 0, 47, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .quick-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: #ffe9f0;
+      color: var(--sente-red);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .quick-icon i {
+      width: 20px;
+      height: 20px;
+    }
+
+    .quick-item h4 {
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .quick-item p {
+      color: var(--sente-text-soft);
+      font-size: 0.9rem;
+    }
+
+    .feature-banner {
+      background: linear-gradient(140deg, #790022, #c2002f);
+      color: #fff;
+      border-radius: 22px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 0;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-copy {
+      padding: 34px;
+    }
+
+    .feature-copy h3 {
+      font-size: 1.9rem;
+      margin-bottom: 10px;
+      line-height: 1.15;
+    }
+
+    .feature-copy p {
+      color: rgba(255, 255, 255, 0.94);
+      margin-bottom: 18px;
+      max-width: 520px;
+    }
+
+    .feature-visual {
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.05));
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .feature-visual img {
+      width: 160px;
+      height: 160px;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: 0 20px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .solutions {
+      background: var(--sente-bg-soft);
+      border-top: 1px solid var(--sente-border);
+      border-bottom: 1px solid var(--sente-border);
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .solution-card {
+      border-radius: 16px;
+      padding: 22px;
+      min-height: 210px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow);
+      background: linear-gradient(150deg, #b10633, #7a0026);
+    }
+
+    .solution-card h4 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .solution-card p {
+      font-size: 0.92rem;
+      opacity: 0.95;
+      margin-bottom: 12px;
+    }
+
+    .solution-card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      background: #1e1e1e;
+      color: #fff;
+      padding: 44px 0 26px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .footer h5 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .footer p,
+    .footer a {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+    }
+
+    .footer a:hover {
+      color: #fff;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-bottom {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .solutions-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .quick-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(1200px, calc(100% - 20px));
+      }
+
+      .brand-logo-shell {
+        width: 68px;
+        height: 68px;
+      }
+
+      .brand-logo-shell img {
+        width: 52px;
+        height: 52px;
+      }
+
+      .main-nav {
+        justify-content: center;
+      }
+
+      .header-actions {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-strip {
+        padding-top: 36px;
+      }
+
+      .hero-grid,
+      .quick-grid,
+      .solutions-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-banner {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-copy {
+        padding: 26px 20px;
+      }
+    }
+  </style>
 </head>
-<body class="public-index-page">
-  <nav class="navbar">
-    <a href="index.html" class="logo"><img src="image/sent_logo_nav.png" alt="Sente Yo Credits logo" class="logo-mark"> SENTE YO CREDITS</a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact & Support</a>
-      <a href="about.html">About</a>
-      <a href="login.html">Login</a>
-      <a href="signup.html">Sign Up</a>
-    </div>
-  </nav>
-
-  <div class="container">
-    <div class="card landing-hero-card">
-      <img src="image/sent_logo_nav.png" alt="Sente Yo Credits logo" class="brand-hero-logo">
-      <h1 class="landing-hero-title">Welcome to Sente Yo Credits</h1>
-      <p class="landing-hero-copy">Fueling Your Next Move with secure, fast, and innovative digital finance.</p>
-      <div class="landing-hero-actions">
-        <a href="login.html" class="btn btn-primary">Get Started</a>
-        <a href="signup.html" class="btn btn-outline landing-hero-outline">Create Account</a>
-        <a href="home.html" class="btn btn-outline landing-hero-outline">Open App Home</a>
-      </div>
-    </div>
-
-    <div class="grid-4 landing-services-grid">
-      <div class="service-card">
-        <div class="service-icon landing-service-badge">WD</div>
-        <h3>Instant Withdrawals</h3>
-        <p>Access your cash anytime, anywhere.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon landing-service-badge">SV</div>
-        <h3>High-Yield Savings</h3>
-        <p>Grow your wealth with competitive rates.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon landing-service-badge">LN</div>
-        <h3>Flexible Loans</h3>
-        <p>Low-interest rates with quick approvals.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon landing-service-badge">IN</div>
-        <h3>Insurance Plans</h3>
-        <p>Protect what matters most.</p>
-      </div>
-    </div>
-
-    <div class="grid-3 landing-metrics-grid">
-      <div class="card landing-metric-card">
-        <h3>10,000+</h3>
-        <p>Happy Customers</p>
-      </div>
-      <div class="card landing-metric-card">
-        <h3>24/7</h3>
-        <p>Customer Support</p>
-      </div>
-      <div class="card landing-metric-card">
-        <h3>99.9%</h3>
-        <p>Transaction Uptime</p>
-      </div>
+<body>
+  <div class="top-segments">
+    <div class="container segment-links">
+      <a class="active" href="index.html">Personal</a>
+      <a href="services.html">SME and Business</a>
+      <a href="about.html">Corporate and Investment</a>
     </div>
   </div>
 
-  <footer>
-    <p>© 2026 Sente Yo Credits – Fueling Your Next Move | Licensed by Central Bank of Uganda</p>
+  <header class="main-header">
+    <div class="container main-nav">
+      <a class="brand" href="index.html" aria-label="Sente Yo Credits home">
+        <span class="brand-logo-shell">
+          <img src="image/sent_logo_nav.png" alt="Sente Yo Credits logo">
+        </span>
+        <span class="brand-name">
+          <strong>Sente Yo Credits</strong>
+          <span>Fueling your next move</span>
+        </span>
+      </a>
+
+      <div class="header-actions">
+        <a href="services.html" class="btn btn-light"><i data-lucide="search"></i> Search</a>
+        <a href="login.html" class="btn btn-light"><i data-lucide="log-in"></i> Log in</a>
+        <a href="signup.html" class="btn btn-primary"><i data-lucide="menu"></i> Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-strip">
+      <div class="container">
+        <div class="hero-copy">
+          <p class="kicker">Personal Banking</p>
+          <h1>Banking that meets you where life happens</h1>
+          <p>Explore secure accounts, quick loans, transfers, and savings tools designed for everyday life in Uganda.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-ads">
+      <div class="container hero-grid">
+        <article class="hero-card card-account">
+          <h2>Open a tailored current account online in minutes</h2>
+          <p>Choose an account that fits your daily lifestyle and spending needs.</p>
+          <a href="signup.html">Explore current account</a>
+        </article>
+
+        <article class="hero-card card-loan">
+          <h2>Get a loan that helps where it matters</h2>
+          <p>Access salary, home and digital loans with a faster approval experience.</p>
+          <a href="loans.html">Explore loans</a>
+        </article>
+
+        <article class="hero-card card-savings">
+          <h2>Open an interest-bearing savings account</h2>
+          <p>Plan your next chapter and stay on track with smart savings goals.</p>
+          <a href="savings.html">Explore savings accounts</a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h3 class="section-title">What would you like to do?</h3>
+        <div class="quick-grid">
+          <a class="quick-item" href="login.html">
+            <span class="quick-icon"><i data-lucide="laptop"></i></span>
+            <span>
+              <h4>Bank online</h4>
+              <p>Log in and manage your account instantly.</p>
+            </span>
+          </a>
+
+          <a class="quick-item" href="services.html">
+            <span class="quick-icon"><i data-lucide="smartphone"></i></span>
+            <span>
+              <h4>Use mobile services</h4>
+              <p>Access fast actions built for your phone.</p>
+            </span>
+          </a>
+
+          <a class="quick-item" href="contact.html">
+            <span class="quick-icon"><i data-lucide="shield"></i></span>
+            <span>
+              <h4>Prevent fraud</h4>
+              <p>Learn how to protect your account and money.</p>
+            </span>
+          </a>
+
+          <a class="quick-item" href="contact.html">
+            <span class="quick-icon"><i data-lucide="phone-call"></i></span>
+            <span>
+              <h4>Talk to us</h4>
+              <p>Get help from support when you need it.</p>
+            </span>
+          </a>
+
+          <a class="quick-item" href="contact.html">
+            <span class="quick-icon"><i data-lucide="map-pin"></i></span>
+            <span>
+              <h4>Find a branch</h4>
+              <p>Locate a nearby branch or service point.</p>
+            </span>
+          </a>
+
+          <a class="quick-item" href="about.html">
+            <span class="quick-icon"><i data-lucide="file-text"></i></span>
+            <span>
+              <h4>Find documents</h4>
+              <p>View key account and service information.</p>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container feature-banner">
+        <div class="feature-copy">
+          <h3>Fueling Your Next Move</h3>
+          <p>Whether you are starting a business, growing your savings, or handling family needs, Sente Yo Credits gives you reliable tools to move with confidence.</p>
+          <a href="signup.html" class="btn btn-light">Create your account</a>
+        </div>
+        <div class="feature-visual">
+          <img src="image/sent_logo_nav.png" alt="Sente Yo Credits logo">
+        </div>
+      </div>
+    </section>
+
+    <section class="solutions">
+      <div class="container">
+        <h3 class="section-title">More banking solutions we can help you with</h3>
+        <div class="solutions-grid">
+          <article class="solution-card">
+            <div>
+              <h4>Get a loan</h4>
+              <p>Use flexible options for personal, car, or home financing.</p>
+            </div>
+            <a href="loans.html">Tell me more <i data-lucide="arrow-right"></i></a>
+          </article>
+
+          <article class="solution-card">
+            <div>
+              <h4>Get insured</h4>
+              <p>Protect yourself and your family with practical cover plans.</p>
+            </div>
+            <a href="insurance.html">Tell me more <i data-lucide="arrow-right"></i></a>
+          </article>
+
+          <article class="solution-card">
+            <div>
+              <h4>Explore savings</h4>
+              <p>Grow your money steadily with account-based savings tools.</p>
+            </div>
+            <a href="savings.html">Tell me more <i data-lucide="arrow-right"></i></a>
+          </article>
+
+          <article class="solution-card">
+            <div>
+              <h4>Send money quickly</h4>
+              <p>Transfer funds securely to Sente accounts and other banks.</p>
+            </div>
+            <a href="transfer.html">Tell me more <i data-lucide="arrow-right"></i></a>
+          </article>
+
+          <article class="solution-card">
+            <div>
+              <h4>Track your history</h4>
+              <p>Review spending and activity trends in one clear view.</p>
+            </div>
+            <a href="history.html">Tell me more <i data-lucide="arrow-right"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h5>Sente Yo Credits</h5>
+          <p>Secure digital banking tools for everyday life. Fast onboarding, reliable access, and support when it matters.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Banking</h5>
+          <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="signup.html">Open an account</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="contact.html">Contact and help</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="login.html">Log in</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 Sente Yo Credits. All rights reserved.
+      </div>
+    </div>
   </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>

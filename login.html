@@ -34,6 +34,12 @@
       <div class="auth-signup-card">
         <h2>Sign In</h2>
         <p class="auth-card-subtitle">Use your Sente account credentials to continue.</p>
+        <div class="auth-demo-box">
+          <strong>Demo opening credentials</strong>
+          <p>Email: <code>demo@bank.com</code></p>
+          <p>Password: <code>demo123</code></p>
+          <button type="button" class="auth-alt-btn" id="useDemoCredentials">Use Demo Credentials</button>
+        </div>
 
         <div id="alertMessage"></div>
 
@@ -65,7 +71,6 @@
         <div class="auth-divider"><span>or</span></div>
         <a href="signup.html" class="auth-alt-btn">Not a member yet? Sign Up</a>
 
-        <p class="auth-demo-text">Demo: demo@bank.com / demo123</p>
       </div>
     </section>
   </main>
@@ -81,39 +86,12 @@
     <p>© 2026 Sente Yo Credits – Fueling Your Next Move</p>
   </footer>
 
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
   <script src="js/auth.js"></script>
-  <script>
-    const rememberEmail = localStorage.getItem('senteRememberEmail');
-    const loginEmailEl = document.getElementById('loginEmail');
-    const rememberEl = document.getElementById('rememberMe');
-
-    if (rememberEmail && loginEmailEl && rememberEl) {
-      loginEmailEl.value = rememberEmail;
-      rememberEl.checked = true;
-    }
-
-    document.querySelectorAll('.auth-password-toggle').forEach((button) => {
-      button.addEventListener('click', () => {
-        const target = document.getElementById(button.dataset.target);
-        if (!target) return;
-        const isPassword = target.type === 'password';
-        target.type = isPassword ? 'text' : 'password';
-        button.textContent = isPassword ? 'Hide' : 'Show';
-      });
-    });
-
-    const loginFormEl = document.getElementById('loginForm');
-    if (loginFormEl) {
-      loginFormEl.addEventListener('submit', () => {
-        if (!loginEmailEl || !rememberEl) return;
-        if (rememberEl.checked) {
-          localStorage.setItem('senteRememberEmail', loginEmailEl.value.trim());
-        } else {
-          localStorage.removeItem('senteRememberEmail');
-        }
-      });
-    }
-  </script>
   <script src="js/mobile-menu.js"></script>
 </body>
 </html>
